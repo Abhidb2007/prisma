@@ -19,5 +19,5 @@ model Todo{
   title    String
   description String
   done      Boolan
-  userId    Int
+  
 }
