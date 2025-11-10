@@ -18,6 +18,6 @@ model Todo{
   id       Int @default(autoincrement()) @id
   title    String
   description String
-  done      Boolan
+  done      Boolian
   
 }
