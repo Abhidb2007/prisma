@@ -18,6 +18,8 @@ model Todo{
   id       Int @default(autoincrement()) @id
   title    String
   description String
-  done      Boolian
+  done      Boolean
+  userId    Int
+  time      DataTime @default(now())
   
 }
