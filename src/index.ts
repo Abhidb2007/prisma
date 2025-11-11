@@ -4,12 +4,12 @@ const client = new PrismaClient();
 async function createUser() {
   try {
     const user = await client.user.create({
-      data: {
-        name: "abhu",
-        password: "abhu123",
-        age: 21,
-        city: "delhi",
+      where: {
+        id: 1
       },
+      include:{
+        todos: true
+      }
     });
     console.log("User created:", user);
   } catch (err) {
