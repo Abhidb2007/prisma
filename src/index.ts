@@ -1,7 +1,21 @@
 import express from "express";
 import { PrismaClient } from "@prisma/client";
+import bcrypt from "bycryptjs";
 const app=express();
 const client = new PrismaClient();
+app,post("/user",async(req,res)=>{
+  const name=req.body.name;
+  const email=req.body.email;
+  const password=req.body.password; 
+  const hashedPassword=bcrypt.hash(password,10)
+  client.user.create({
+    data:{
+      username,
+      password:hashedPassword,
+    }
+    
+  })
+})
 
 app.get("/users",async(req,res)=>{
   const users=await client.users.findMany();
